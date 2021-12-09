@@ -31,7 +31,7 @@ class Waveform extends Component {
   };
   
   render() {
-    const url = 'https://www.mfiles.co.uk/mp3-downloads/gs-cd-track2.mp3';
+    const url = `//localhost:8001/${this.props.filename}`;
 
     return (
       <>

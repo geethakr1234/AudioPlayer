@@ -1,10 +1,13 @@
 import {useState} from 'react';
 import axios from 'axios';
 import { toast} from 'react-toastify';
+import { useNavigate } from "react-router";
 
 import './style.css';
 
 export const FileUploader = ({onSuccess}) => {
+
+    let navigate = useNavigate();
     const [files, setFiles] = useState([]);
 
     const onInputChange = (e) => {
@@ -28,6 +31,9 @@ export const FileUploader = ({onSuccess}) => {
             .catch((e) => {
                 toast.error('Upload Error')
             })
+
+        navigate('/play')
+
     };
 
     return (
@@ -37,7 +43,7 @@ export const FileUploader = ({onSuccess}) => {
                 <input type="file"
                        onChange={onInputChange}
                        className="form-control"
-                    //    accept="audio/*"
+                       accept="audio/*"
                        multiple/>
             </div>
 
