@@ -17,9 +17,9 @@ function App() {
   return (
     <>
       <BrowserRouter basename='/'>
-        <Link to='/upload'>Upload</Link>
+        <Link to='/upload'>   To Upload    </Link>
         <br />
-        <Link to='/play'>Play</Link>
+        <Link to='/play'>   To Play   </Link>
         <br />
         <br />
         <Routes>

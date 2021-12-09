@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 
 
-class Waveform extends Component {  
+class Waveform extends Component {
   state = {
     playing: false,
   };
@@ -24,12 +24,12 @@ class Waveform extends Component {
 
     this.waveform.load(track);
   };
-  
+
   handlePlay = () => {
     this.setState({ playing: !this.state.playing });
     this.waveform.playPause();
   };
-  
+
   render() {
     const url = `//localhost:8001/${this.props.filename}`;
 
@@ -40,6 +40,13 @@ class Waveform extends Component {
         </button>
         <div id="waveform" />
         <audio id="track" src={url} />
+        {!this.state.playing &&
+          <form>
+            <div className="form-group">
+              <label htmlFor="exampleFormControlTextarea1">Comments : </label>
+              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </form>}
       </>
     );
   }
